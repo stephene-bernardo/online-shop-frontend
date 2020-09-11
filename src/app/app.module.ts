@@ -10,7 +10,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExampleComponent } from './example/example.component';
-import { HomepageComponent } from './homepage/homepage.component';
+
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -18,12 +19,13 @@ import { HomepageComponent } from './homepage/homepage.component';
     AppComponent,
     LoginComponent,
     ExampleComponent,
-    HomepageComponent
+    HomeComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
+      {path: '', component: HomeComponent},
       {path: 'login', component: LoginComponent}
     ]),
     AppRoutingModule,

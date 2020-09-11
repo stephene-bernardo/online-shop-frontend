@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,9 @@ export class LoginComponent implements OnInit {
     password: new FormControl('')
   })
 
-  constructor(private authenticationService: AuthenticationService) { 
+  constructor(private authenticationService: AuthenticationService,
+    private route: ActivatedRoute,
+    private router: Router) { 
   }
 
   signin(){
@@ -21,10 +24,13 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(username, password).subscribe(res => {
       localStorage.setItem("userid", res[0].userid);
       localStorage.setItem("username", res[0].loginname);
+      this.router.navigate(['']);
+
     })
   }
 
   ngOnInit(): void {
+    console.log("asdas")
   }
 
 }
