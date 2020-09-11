@@ -1,0 +1,38 @@
+
+form.login{
+    border-radius: 10px;
+    width: 350px;
+    height: 200px;
+    border-style: solid;
+    padding: 25px;
+    /* border-color: #6423cd; */
+    border-color: #0ac32d;
+}
+
+.login-title{
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+form .input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+form .div-button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+input{
+    width: 250px;
+    height: 24px;
+}
+
+button {
+    font-size: 18px;
+}
