@@ -2,13 +2,11 @@
 
 <table>
     <tr>
-        <td>Filter Name: <input type="text"></td>
+        <td>Filter Name: <input type="text" [ngModel]="filterName" (ngModelChange)="onChanged($event)"></td>
         <td>Filter Type:   
-            <select name="cars" id="cars">
+            <select #select (change)='onOptionsSelected(select.value)'>
                 <option value=""></option>
-                <option value="Games">Games</option>
-                <option value="Musics">Musics</option>
-                <option value="Books">Books</option>
+                <option *ngFor="let type of types" [value]="type.type">{{type.type}}</option>
           </select>
         </td>
         <td></td>
