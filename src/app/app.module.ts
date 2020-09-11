@@ -14,6 +14,7 @@ import { ExampleComponent } from './example/example.component';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
+import { ProductTableComponent } from './product-table/product-table.component';
 
 
 
@@ -22,7 +23,8 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     LoginComponent,
     ExampleComponent,
-    HomeComponent
+    HomeComponent,
+    ProductTableComponent
   ],
   imports: [
     HttpClientModule,
