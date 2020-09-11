@@ -1,6 +1,21 @@
-<nav><a>OnlineShopping</a></nav>
+<nav>
+  <span>
+    <a>OnlineShopping</a>
+  </span>
+ 
+  <span *ngIf="username" class="dropdown">
+    <span>
+      <fa-icon [icon]="faUser"></fa-icon>
+      {{username}}
+    </span>
+    <div class="dropdown-content">
+      <p (click)="logout()">Logout</p>
+      </div>
+   </span>
+  
+</nav>
 <div class="content">
-  <router-outlet></router-outlet>
+  <router-outlet (activate)='onActivate($event)'></router-outlet>
 </div>
 
 

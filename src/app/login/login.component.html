@@ -9,7 +9,10 @@
       <input type="password" formControlName="password">
     </div>
     <div class="div-button">
-      <button type="submit" class="login">Sign In</button>
+      <div>
+        <span>{{errorMsg}}</span>
+        <button  [disabled]="!loginForm.valid" type="submit" class="login">Sign In</button>
+      </div>
     </div>
    
   </form>

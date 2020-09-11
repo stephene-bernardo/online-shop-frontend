@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
@@ -10,9 +10,11 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   })
+
+  errorMsg="";
 
   constructor(private authenticationService: AuthenticationService,
     private route: ActivatedRoute,
@@ -22,15 +24,22 @@ export class LoginComponent implements OnInit {
   signin(){
     let {username, password} = this.loginForm.value
     this.authenticationService.login(username, password).subscribe(res => {
-      localStorage.setItem("userid", res[0].userid);
-      localStorage.setItem("username", res[0].loginname);
-      this.router.navigate(['']);
+      if(!res[0] ){
+        this.errorMsg = 'Invalid Credentials!'
+        this.loginForm.patchValue({
+          username:'',
+          password:''
+        })
+      } else {
+        localStorage.setItem("userid", res[0].userid);
+        localStorage.setItem("username", res[0].loginname);
+        this.router.navigate(['']);
 
+      }
     })
   }
 
   ngOnInit(): void {
-    console.log("asdas")
   }
 
 }

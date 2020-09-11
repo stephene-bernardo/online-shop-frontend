@@ -26,6 +26,11 @@ form .div-button{
     justify-content: flex-end;
 }
 
+form .div-button div{
+    width: 258px;
+    display: flex;
+    justify-content: space-between;
+}
 
 
 input{
