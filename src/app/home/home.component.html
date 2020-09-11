@@ -1,1 +1,26 @@
-<p>home works!</p>
+<!-- <p>{{products}}</p> -->
+
+<table>
+    <tr>
+        <td>Filter Name: <input type="text"></td>
+        <td>Filter Type:   
+            <select name="cars" id="cars">
+                <option value=""></option>
+                <option value="Games">Games</option>
+                <option value="Musics">Musics</option>
+                <option value="Books">Books</option>
+          </select>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr *ngFor="let product of products">
+        <td>{{product.name}}</td>
+        <td>{{product.type}}</td>
+        <td>{{product.description}}</td>
+    </tr>
+</table>

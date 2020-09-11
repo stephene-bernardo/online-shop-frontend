@@ -13,6 +13,8 @@ import { ExampleComponent } from './example/example.component';
 
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
+
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    CommonModule
 
   ],
   providers: [],
