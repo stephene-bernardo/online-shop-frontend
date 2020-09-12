@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from '../product.service';
 import { debounce, debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { BasketService } from '../basket.service';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-table',
@@ -9,12 +11,14 @@ import { Subject } from 'rxjs';
   styleUrls: ['./product-table.component.css']
 })
 export class ProductTableComponent implements OnInit {
+  @Input() userId: string;
+  @Output() onPurchased = new EventEmitter<any>();
   products;
   types;
   currentTypeFilter='';
   filterName='';
   modelChanged: Subject<string> = new Subject<string>();
-  constructor( private product:ProductService) {
+  constructor( private product:ProductService, private basket:BasketService) {
     product.findAll().subscribe(res=>{
           this.products = res
         })
@@ -43,6 +47,14 @@ export class ProductTableComponent implements OnInit {
 
   onChanged(e){
     this.modelChanged.next(e);
+  }
+
+  purchase(productId){
+    let quantity = (<HTMLInputElement>document.getElementById(`id_${productId}`)).value;
+    (<HTMLInputElement>document.getElementById(`id_${productId}`)).value=""
+    this.basket.insert(this.userId, productId, quantity).subscribe(res => {
+      this.onPurchased.emit(res);
+    })
   }
 
 }

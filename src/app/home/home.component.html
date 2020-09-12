@@ -1,4 +1,5 @@
 
 <div>
-    <app-product-table></app-product-table>
+    <app-product-table (onPurchased)="onPurchased($event)" [userId]="userId"></app-product-table>
+    <app-basket-table [purchaseItems]="purchaseItems"></app-basket-table>
 </div>

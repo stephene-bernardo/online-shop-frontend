@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { ProductTableComponent } from './product-table/product-table.component';
+import { BasketTableComponent } from './basket-table/basket-table.component';
 
 
 
@@ -24,7 +25,8 @@ import { ProductTableComponent } from './product-table/product-table.component';
     LoginComponent,
     ExampleComponent,
     HomeComponent,
-    ProductTableComponent
+    ProductTableComponent,
+    BasketTableComponent
   ],
   imports: [
     HttpClientModule,
