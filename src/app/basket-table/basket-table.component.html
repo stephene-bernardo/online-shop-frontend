@@ -3,7 +3,7 @@
     <div class="title">
         Basket
     </div>
-    <table>
+    <table *ngIf="0<purchaseItems.length; else noOrder">
         <tr>
             <th class="name">Name</th>
             <th class="type">Type</th>
@@ -17,4 +17,7 @@
             <td class="cancel"><button (click)=cancelOrder(item.id)>Cancel Order</button></td>
         </tr>
     </table>
+    <ng-template #noOrder>
+        No Order Available...
+    </ng-template>
 </div>
