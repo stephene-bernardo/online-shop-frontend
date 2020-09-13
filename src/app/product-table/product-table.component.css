@@ -1,11 +1,36 @@
+
+div {
+  width: 1200px;
+  margin-bottom: 20px;
+}
+
+table caption{
+  font-size: 24px;
+}
 table, th, td {
     border: 1px solid black;
+}
+
+.name {
+  width: 30%;
+}
+
+.name input {
+  width: 60%;
+}
+
+.type{
+  width: 15%;
+}
+
+.description{
+  width:50%
+}
+
+  .quantity {
+    width: 5%
   }
 
-  /* .tableWrap {
-    height: 200px;
-    border: 2px solid black;
-    overflow: auto;
+  .quantity input{
+    width: 60px;
   }
-  /* Set header to stick to the top of the container. */
-

@@ -1,36 +1,38 @@
 
+<div>
+    <table>
+        <caption>Product</caption>
+        <thead>
+            <tr>
+                <td class="name">Filter Name: <input type="text" [ngModel]="filterName" (ngModelChange)="onChanged($event)" maxlength = "30"></td>
+                <td class="type">Filter Type:   
+                    <select #select (change)='onOptionsSelected(select.value)'>
+                        <option value=""></option>
+                        <option *ngFor="let type of types" [value]="type.type">{{type.type}}</option>
+                    </select>
+                </td>
+                <td class="description"></td>
+                <td class="quantity"></td>
+                <td class="order"></td>
+            </tr>
+            <tr>
+                <th class="name">Name</th>
+                <th class="type">Type</th>
+                <th class="description">Description</th>
+                <th class="quantity">Quantity</th>
+                <th class="order"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td class="name">{{product.name}}</td>
+                <td class="type">{{product.type}}</td>
+                <td  class="description">{{product.description}}</td>
+                <td class="quantity"><input type="number" id="id_{{product.id}}"/></td>
+                <td class="order"><button (click)="purchase(product.id)">order</button></td>
+            </tr>
+        </tbody>
+       
+    </table>
+</div>
 
-<table>
-    <caption>Product</caption>
-    <thead>
-        <tr>
-            <td>Filter Name: <input type="text" [ngModel]="filterName" (ngModelChange)="onChanged($event)" maxlength = "30"></td>
-            <td>Filter Type:   
-                <select #select (change)='onOptionsSelected(select.value)'>
-                    <option value=""></option>
-                    <option *ngFor="let type of types" [value]="type.type">{{type.type}}</option>
-                </select>
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Quantity</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of products">
-            <td>{{product.name}}</td>
-            <td>{{product.type}}</td>
-            <td>{{product.description}}</td>
-            <td><input type="number" id="id_{{product.id}}"/></td>
-            <td><button (click)="purchase(product.id)">Buy</button></td>
-        </tr>
-    </tbody>
-   
-</table>
