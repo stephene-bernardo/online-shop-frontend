@@ -35,7 +35,8 @@ import { ModalComponent } from './modal/modal.component';
     BrowserModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      {path: 'login', component: LoginComponent}
+      {path: 'login', component: LoginComponent},
+      {path: '**', redirectTo:'/'}
     ]),
     AppRoutingModule,
     BrowserAnimationsModule,
