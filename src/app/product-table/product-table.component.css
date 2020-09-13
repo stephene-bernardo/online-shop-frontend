@@ -1,39 +1,52 @@
 
-div table{
+div .table{
   width: 1200px;
-  margin: 15px 0;
+  margin-bottom: 15px;
+  height: 280px;
+    overflow-y: scroll;
 }
 
 div .title{
   text-align: center; 
   font-size: 24px;
 }
-table, th, td {
-    border: 1px solid black;
-}
 
 .name {
+  display: inline-block;
   width: 30%;
 }
 
 .name input {
+  display: inline-block;
   width: 60%;
 }
 
 .type{
-  width: 15%;
+  display: inline-block;
+  width: 13%;
+  text-align: center;
 }
 
 .description{
-  width:50%
+  display: inline-block;
+  width:40%
 }
 
 .quantity {
-  width: 5%
+  text-align: center;
+  display: inline-block;
+  width: 10%
 }
 
 .quantity input{
+  display: inline-block;
   width: 60px;
+}
+
+.order {
+  text-align: center;
+  display: inline-block;
+  width: 7%;
 }
 
 .filter{
@@ -43,4 +56,17 @@ table, th, td {
 .product-empty{
   width: 1200px;
   margin: 20px 0;
+}
+
+div .th {
+  font-weight: bold;
+  /* display: inline-block; */
+  text-align: center;
+  font-size: 1.2em;
+
+}
+
+.row {
+  border-bottom: 1px solid black;
+  padding: 1px 0px;
 }

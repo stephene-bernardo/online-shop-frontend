@@ -13,26 +13,21 @@
             </select>
         </div>
     </div>
-    <table *ngIf="products && 0<products.length; else filterNotFound">
-        <thead>
-            <tr>
-                <th class="name">Name</th>
-                <th class="type">Type</th>
-                <th class="description">Description</th>
-                <th class="quantity">Quantity</th>
-                <th class="order"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of products">
-                <td class="name">{{product.name}}</td>
-                <td class="type">{{product.type}}</td>
-                <td  class="description">{{product.description}}</td>
-                <td class="quantity"><input type="number" id="id_{{product.id}}"/></td>
-                <td class="order"><button (click)="purchase(product.id)">Order</button></td>
-            </tr>
-        </tbody>    
-    </table>
+    <div class="row">
+        <div class="th name">Name</div>
+        <div class="th type">Type</div>
+        <div class="th description">Description</div>
+        <div class="th quantity">Quantity</div>
+    </div>
+    <div class="table" *ngIf="products && 0<products.length; else filterNotFound">
+        <div  class="row" *ngFor="let product of products">
+            <div class="name">{{product.name}}</div>
+            <div class="type">{{product.type}}</div>
+            <div  class="description">{{product.description}}</div>
+            <div class="quantity"><input type="number" id="id_{{product.id}}"/></div>
+            <div class="order"><button (click)="purchase(product.id)">Order</button></div>
+        </div>
+    </div>
     <ng-template #filterNotFound>
         <div class="product-empty">
             Query Not Found...
