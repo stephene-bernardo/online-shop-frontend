@@ -1,7 +1,7 @@
 
 <div>
     <div class="title">Product</div>
-    <div>
+    <div class="table-filter">
         <div class="filter name">
             Filter Name: <input type="text" [ngModel]="filterName" (ngModelChange)="onChanged($event)" maxlength = "30">
         </div>
@@ -13,7 +13,7 @@
             </select>
         </div>
     </div>
-    <div class="row">
+    <div class="table-header">
         <div class="th name">Name</div>
         <div class="th type">Type</div>
         <div class="th description">Description</div>
@@ -32,7 +32,6 @@
         <div class="product-empty">
             Query Not Found...
         </div>
-     
     </ng-template>
 </div>
 

@@ -4,11 +4,13 @@ div .table{
   margin-bottom: 15px;
   height: 280px;
     overflow-y: scroll;
+  padding-bottom: 10px;
 }
 
 div .title{
   text-align: center; 
   font-size: 24px;
+  font-weight: bold;
 }
 
 .name {
@@ -50,7 +52,8 @@ div .title{
 }
 
 .filter{
-  display: inline-block
+  display: inline-block;
+  font-weight: bold;
 }
 
 .product-empty{
@@ -60,13 +63,23 @@ div .title{
 
 div .th {
   font-weight: bold;
-  /* display: inline-block; */
   text-align: center;
   font-size: 1.2em;
+
 
 }
 
 .row {
   border-bottom: 1px solid black;
   padding: 1px 0px;
+}
+
+.table-header {
+  width: 1182.2px;
+  border-bottom: 3px solid black;
+  padding: 1px 0px;
+}
+
+.table-filter{
+  width: 1182.2px;
 }
