@@ -57,8 +57,12 @@ div .table{
 }
 
 .product-empty{
+  text-align: center;
+  margin-top: 20px;
   width: 1200px;
-  margin: 20px 0;
+  height: 220px;
+  padding-bottom: 10px;
+  margin-bottom: 15px
 }
 
 .row {

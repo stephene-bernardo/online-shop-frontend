@@ -58,6 +58,9 @@ div .title{
 
 .basket-empty{
   width: 600px;
+  text-align: center;
+  margin-top: 20px;
+  height: 180px;
 }
 
 
