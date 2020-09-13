@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  onlineShopBackendURL: "http://localhost:3000"
+  onlineShopBackendURL: "https://karl-online-shop-backend.herokuapp.com/"
 };
