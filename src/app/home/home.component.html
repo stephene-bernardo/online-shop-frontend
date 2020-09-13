@@ -1,5 +1,13 @@
 
 <div>
-    <app-product-table (onPurchased)="onPurchased($event)" [userId]="userId"></app-product-table>
+    <jw-modal id="custom-modal-1">
+        <h1>Error Message</h1>
+        <p>{{bodyText}}</p>
+        <button (click)="closeModal('custom-modal-1');">Close</button>
+      </jw-modal>
+    <app-product-table (onPurchased)="onPurchased($event)"
+     [userId]="userId" 
+     (errorMessage)="onErrorMessage($event)" [purchaseItems]="purchaseItems"></app-product-table>
     <app-basket-table [purchaseItems]="purchaseItems"></app-basket-table>
+
 </div>

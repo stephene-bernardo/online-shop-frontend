@@ -16,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { ProductTableComponent } from './product-table/product-table.component';
 import { BasketTableComponent } from './basket-table/basket-table.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -26,7 +27,8 @@ import { BasketTableComponent } from './basket-table/basket-table.component';
     ExampleComponent,
     HomeComponent,
     ProductTableComponent,
-    BasketTableComponent
+    BasketTableComponent,
+    ModalComponent
   ],
   imports: [
     HttpClientModule,
