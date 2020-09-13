@@ -14,14 +14,14 @@ export class BasketService {
         "userid": userid,
         "productid": productid,
         "quantity": quantity
-      });
+      }, {withCredentials: true});
   }
 
   findById(userid){
-    return this.http.get(`${this.baseUrl}/${userid}`)
+    return this.http.get(`${this.baseUrl}`, {withCredentials: true})
   }
 
   remove(id){
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`, {withCredentials: true});
   }
 }

@@ -24,6 +24,9 @@ nav {
     display: inline-block;
     top: 8px;
   }
+.dropdown:hover{
+  cursor: pointer;
+}
   
 .dropdown-content {
   display: none;

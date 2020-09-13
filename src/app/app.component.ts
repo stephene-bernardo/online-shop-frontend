@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthenticationService } from './authentication.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,17 +13,28 @@ export class AppComponent {
   username:string= '';
   
   constructor(private route: ActivatedRoute,
-    private router: Router){
+    private router: Router, private auth:AuthenticationService){
 
   }
   onActivate(res){
-    this.username = localStorage.getItem('username')
+    this.auth.getProfile().subscribe(res => {
+      if(res["passport"].user ){
+        this.username = res["passport"].user[0].loginname
+      }
+    }, rej=>{
+      this.username = ''
+    })
   }
 
   logout(){
-    this.username = "";
-    localStorage.clear();
-    this.router.navigate(['/login']);
+    this.auth.logout().subscribe(res=>{
+      this.username = "";
+      this.router.navigate(['/login']);
+    }, err=>{
+      this.username = "";
+      this.router.navigate(['/login']);
+    })
+
 
   }
 }

@@ -11,15 +11,15 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   findAll():Observable<Object>{
-    return this.http.get(this.baseUrl);
+    return this.http.get(this.baseUrl, {withCredentials: true});
   } 
 
   findType(): Observable<Object>{
-    return this.http.get(this.baseUrl+"/type")
+    return this.http.get(this.baseUrl+"/type", {withCredentials: true})
   }
 
   findByType(type): Observable<Object>{
-    let options = {params: new HttpParams().set('type', type)}
+    let options = {params: new HttpParams().set('type', type), withCredentials: true}
     return this.http.get(this.baseUrl, options);
   }
 
@@ -27,7 +27,7 @@ export class ProductService {
   findByName(name): Observable<Object>{
     let httpParams = new HttpParams();
     httpParams = httpParams.set('name', name)
-    let options = {params: httpParams}
+    let options = {params: httpParams, withCredentials: true}
     return this.http.get(this.baseUrl, options);
   }
 
@@ -42,7 +42,7 @@ export class ProductService {
     else if(name){
       httpParams = httpParams.set('name', name)
     }
-    let options = {params: httpParams}
+    let options = {params: httpParams, withCredentials: true}
     return this.http.get(this.baseUrl, options);
   }
 }

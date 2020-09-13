@@ -15,7 +15,19 @@ export class AuthenticationService {
    
   }
   login(name: string, password:string): Observable<Object>{
-    let options = {params: new HttpParams().set('username', name).set('password', password)}
-    return this.http.get(this.baseUrl, options)
+    // let options = {params: new HttpParams().set('username', name).set('password', password)}
+    // return this.http.get(this.baseUrl, options)
+    return this.http.post(`${this.baseUrl}/authenticate`, {
+      "username":name,
+      "password":password
+    }, {withCredentials: true})
+  }
+
+  getProfile(): Observable<Object>{
+      return this.http.get(`${this.baseUrl}/profile`, {withCredentials: true})
+  }
+
+  logout(): Observable<Object>{
+    return this.http.get(`${this.baseUrl}/logout`, {withCredentials: true})
   }
 }

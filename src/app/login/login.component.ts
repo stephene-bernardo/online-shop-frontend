@@ -19,27 +19,31 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService,
     private route: ActivatedRoute,
     private router: Router) { 
+     
   }
 
   signin(){
     let {username, password} = this.loginForm.value
     this.authenticationService.login(username, password).subscribe(res => {
-      if(!res[0] ){
+      if(!res["passport"].user[0]){
         this.errorMsg = 'Invalid Credentials!'
         this.loginForm.patchValue({
           username:'',
           password:''
         })
       } else {
-        localStorage.setItem("userid", res[0].userid);
-        localStorage.setItem("username", res[0].loginname);
-        this.router.navigate(['']);
-
+        this.router.navigate(['/']);
       }
     })
   }
 
   ngOnInit(): void {
+    this.authenticationService.getProfile().subscribe(res=>{
+      if(res["passport"].user[0]){
+        this.router.navigate(['']);
+      }
+    }, err => {
+    })
   }
 
 }
