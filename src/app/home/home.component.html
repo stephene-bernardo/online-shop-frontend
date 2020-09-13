@@ -8,6 +8,6 @@
     <app-product-table (onPurchased)="onPurchased($event)"
      [userId]="userId" 
      (errorMessage)="onErrorMessage($event)" [purchaseItems]="purchaseItems"></app-product-table>
-    <app-basket-table [purchaseItems]="purchaseItems"></app-basket-table>
+    <app-basket-table [purchaseItems]="purchaseItems" (removeItem)=onPurchased($event)></app-basket-table>
 
 </div>

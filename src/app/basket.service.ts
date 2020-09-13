@@ -19,4 +19,8 @@ export class BasketService {
   findById(userid){
     return this.http.get(`${this.baseUrl}/${userid}`)
   }
+
+  remove(id){
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
 }

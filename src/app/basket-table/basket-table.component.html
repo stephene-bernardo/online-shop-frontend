@@ -6,11 +6,13 @@
             <th class="name">Name</th>
             <th class="type">Type</th>
             <th class="quantity">Quantity</th>
+            <th></th>
         </tr>
         <tr *ngFor="let item of purchaseItems">
             <td class="name">{{item.name}}</td>
             <td class="type">{{item.type}}</td>
             <td class="quantity">{{item.quantity}}</td>
+            <td class="cancel"><button (click)=cancelOrder(item.id)>Cancel Order</button></td>
         </tr>
     </table>
 </div>
