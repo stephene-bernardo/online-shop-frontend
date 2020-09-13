@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  baseUrl: string = 'http://localhost:3000/product'
+  baseUrl: string = `${environment.onlineShopBackendURL}/product`
   constructor(private http: HttpClient) { }
 
   findAll():Observable<Object>{
