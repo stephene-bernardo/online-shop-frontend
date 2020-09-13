@@ -13,7 +13,7 @@
             </select>
         </div>
     </div>
-    <table>
+    <table *ngIf="products && 0<products.length; else filterNotFound">
         <thead>
             <tr>
                 <th class="name">Name</th>
@@ -33,5 +33,11 @@
             </tr>
         </tbody>    
     </table>
+    <ng-template #filterNotFound>
+        <div class="product-empty">
+            Query Not Found...
+        </div>
+     
+    </ng-template>
 </div>
 

@@ -1,7 +1,7 @@
 
 div table{
   width: 1200px;
-  margin-bottom: 20px;
+  margin: 15px 0;
 }
 
 div .title{
@@ -38,4 +38,9 @@ table, th, td {
 
 .filter{
   display: inline-block
+}
+
+.product-empty{
+  width: 1200px;
+  margin: 20px 0;
 }
