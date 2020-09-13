@@ -1,13 +1,16 @@
-<table>
-    <caption>Basket</caption>
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Quantity</th>
-    </tr>
-    <tr *ngFor="let item of purchaseItems">
-        <td>{{item.name}}</td>
-        <td>{{item.type}}</td>
-        <td>{{item.quantity}}</td>
-    </tr>
-</table>
+
+<div>
+    <table>
+        <caption>Basket</caption>
+        <tr>
+            <th class="name">Name</th>
+            <th class="type">Type</th>
+            <th class="quantity">Quantity</th>
+        </tr>
+        <tr *ngFor="let item of purchaseItems">
+            <td class="name">{{item.name}}</td>
+            <td class="type">{{item.type}}</td>
+            <td class="quantity">{{item.quantity}}</td>
+        </tr>
+    </table>
+</div>

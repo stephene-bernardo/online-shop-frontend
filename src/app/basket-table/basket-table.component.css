@@ -1,3 +1,27 @@
 table, th, td {
     border: 1px solid black;
-  }
+}
+
+caption {
+  font-size: 24px;
+}
+
+div {
+  width: 500px
+}
+
+table {
+  width: 100%;
+}
+
+.name {
+  width:60%
+}
+
+.type{
+  width: 20%; 
+}
+
+.quantity {
+  width: 20%;
+}
