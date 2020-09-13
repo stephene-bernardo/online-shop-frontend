@@ -7,9 +7,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 **online-shop-backend** should be running
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Environment Variables
 #### To change the environment variables. you should go to environments/environment.ts
@@ -17,8 +14,18 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 | ---------------------|-------------|--------------|
 |onlineShopBackendURL  |URL for accessing the backend| http://localhost:3000|
 
-## Build
+## Setting up and running frontend locally
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Install dependency
+```
+npm install
+```
+
+#### run the application
+```
+npm run start
+```
+ Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
 
 
