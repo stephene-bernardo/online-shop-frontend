@@ -1,6 +1,6 @@
 
 <div>
-    <div class="title">Product</div>
+    <div class="table-title">Product</div>
     <div class="table-filter">
         <div class="filter name">
             Filter Name: <input type="text" [ngModel]="filterName" (ngModelChange)="onChanged($event)" maxlength = "30">
@@ -21,11 +21,13 @@
     </div>
     <div class="table" *ngIf="products && 0<products.length; else filterNotFound">
         <div  class="row" *ngFor="let product of products">
-            <div class="name">{{product.name}}</div>
-            <div class="type">{{product.type}}</div>
-            <div  class="description">{{product.description}}</div>
-            <div class="quantity"><input type="number" id="id_{{product.id}}"/></div>
-            <div class="order"><button (click)="purchase(product.id)">Order</button></div>
+            <div class="remove-excess">
+                <div class="name">{{product.name}}</div>
+                <div class="type">{{product.type}}</div>
+                <div  class="description">{{product.description}}</div>
+                <div class="quantity"><input type="number" id="id_{{product.id}}"/></div>
+                <div class="order"><button (click)="purchase(product.id)">Order</button></div>
+            </div>
         </div>
     </div>
     <ng-template #filterNotFound>

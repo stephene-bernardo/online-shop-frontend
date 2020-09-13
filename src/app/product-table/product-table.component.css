@@ -2,12 +2,12 @@
 div .table{
   width: 1200px;
   margin-bottom: 15px;
-  height: 280px;
-    overflow-y: scroll;
+  height: 240px;
+  overflow-y: auto;
   padding-bottom: 10px;
 }
 
-div .title{
+.table-title{
   text-align: center; 
   font-size: 24px;
   font-weight: bold;
@@ -51,7 +51,7 @@ div .title{
   width: 7%;
 }
 
-.filter{
+.filter {
   display: inline-block;
   font-weight: bold;
 }
@@ -61,25 +61,25 @@ div .title{
   margin: 20px 0;
 }
 
-div .th {
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.2em;
-
-
-}
-
 .row {
-  border-bottom: 1px solid black;
   padding: 1px 0px;
 }
 
 .table-header {
+  display: flex;
   width: 1182.2px;
   border-bottom: 3px solid black;
   padding: 1px 0px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
 }
 
 .table-filter{
   width: 1182.2px;
+}
+
+.remove-excess{
+  width: 1182.2px;
+  border-bottom: 1px solid black;
 }

@@ -1,36 +1,67 @@
-table, th, td {
-    border: 1px solid black;
-}
 
-caption {
+.table-title{
+  text-align: center; 
   font-size: 24px;
+  font-weight: bold;
 }
 
-div {
-  width: 500px
-}
-
-table {
-  width: 100%;
+.table-body {
+  width: 600px;
+  margin-bottom: 15px;
+  height: 200px;
+  overflow-y: auto;
+  padding-bottom: 10px;
 }
 
 .name {
+  display: inline-block;
   width:50%
 }
 
 .type{
-  width: 20%; 
+  display: inline-block;
+  width: 15%; 
+  text-align: center;
 }
 
 .quantity {
+  text-align: center;
+  display: inline-block;
   width: 15%;
+  text-align: center;
 }
 .cancel {
-  width: 15%;
+  display: inline-block;
+  width: 20%;
 }
 
 
 div .title{
   text-align: center; 
   font-size: 24px;
+}
+
+.table-header {
+  display: flex;
+  width: 583.2px;
+  border-bottom: 3px solid black;
+  padding: 1px 0px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.row {
+  width: 100%;
+  padding: 1px 0px;
+}
+
+.basket-empty{
+  width: 600px;
+}
+
+
+.remove-excess{
+  width: 583.2px;
+  border-bottom: 1px solid black;
 }
