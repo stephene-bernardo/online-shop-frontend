@@ -1,20 +1,20 @@
 
 <div>
+    <div class="title">Product</div>
+    <div>
+        <div class="filter name">
+            Filter Name: <input type="text" [ngModel]="filterName" (ngModelChange)="onChanged($event)" maxlength = "30">
+        </div>
+        <div class="filter type">
+            Filter Type:   
+            <select #select (change)='onOptionsSelected(select.value)'>
+                <option value=""></option>
+                <option *ngFor="let type of types" [value]="type.type">{{type.type}}</option>
+            </select>
+        </div>
+    </div>
     <table>
-        <caption>Product</caption>
         <thead>
-            <tr>
-                <td class="name">Filter Name: <input type="text" [ngModel]="filterName" (ngModelChange)="onChanged($event)" maxlength = "30"></td>
-                <td class="type">Filter Type:   
-                    <select #select (change)='onOptionsSelected(select.value)'>
-                        <option value=""></option>
-                        <option *ngFor="let type of types" [value]="type.type">{{type.type}}</option>
-                    </select>
-                </td>
-                <td class="description"></td>
-                <td class="quantity"></td>
-                <td class="order"></td>
-            </tr>
             <tr>
                 <th class="name">Name</th>
                 <th class="type">Type</th>
@@ -29,10 +29,9 @@
                 <td class="type">{{product.type}}</td>
                 <td  class="description">{{product.description}}</td>
                 <td class="quantity"><input type="number" id="id_{{product.id}}"/></td>
-                <td class="order"><button (click)="purchase(product.id)">order</button></td>
+                <td class="order"><button (click)="purchase(product.id)">Order</button></td>
             </tr>
-        </tbody>
-       
+        </tbody>    
     </table>
 </div>
 
